@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    
+    <!-- Preconexión de fuentes (Acelera la carga) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Enlaces a los estilos CSS modulares -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+    <!-- Menú de navegación principal -->
+    <header>
+        <div class="logo">Elegance<span>.</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="projects.html">Proyectos</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html#tecnologias">Tecnologías</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="active">Contacto</a></li> <!-- Página actual -->
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Contenido principal: Formulario de Contacto -->
+    <main>
+        <section class="contact-section">
+            <h1 class="hero-title">Contacto <span>.</span></h1>
+            
+            <!-- Breve instrucción para el usuario -->
+            <p class="hero-description">
+                ¿Tienes un proyecto en mente? Nos encantaría escucharlo. Completa el formulario y nos pondremos en contacto contigo a la brevedad.
+            </p>
+            
+            <!-- Formulario interactivo con efecto de Floating Labels -->
+            <form action="#" method="POST" class="contact-form">
+                
+                <!-- Grupo para Nombre (Input Text) -->
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder=" " required>
+                    <label for="name">Nombre Completo</label>
+                </div>
+                
+                <!-- Grupo para Email (Input Email validado) -->
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">Correo Electrónico</label>
+                </div>
+                
+                <!-- Grupo para Selección de Servicio (Dropdown) -->
+                <div class="form-group">
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected hidden></option> <!-- Placeholder oculto requerido por hack CSS -->
+                        <option value="uiux">Diseño UI/UX</option>
+                        <option value="frontend">Desarrollo Frontend</option>
+                        <option value="ecommerce">E-Commerce</option>
+                        <option value="seo">Optimización SEO</option>
+                    </select>
+                    <label for="service">Servicio de Interés</label>
+                </div>
+                
+                <!-- Grupo para el Mensaje/Descripción (Textarea multipárrafo) -->
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+                    <label for="message">Detalles del Proyecto</label>
+                </div>
+                
+                <!-- Botón de Envío, reutilizando estilo Principal -->
+                <button type="submit" class="btn btn-primary submit-btn">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

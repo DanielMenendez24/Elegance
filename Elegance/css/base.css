@@ -1,0 +1,62 @@
+/* Importamos la fuente 'Outfit' desde Google Fonts para un aspecto moderno y minimalista */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* Variables CSS: Definimos nuestra paleta de colores global para facilitar cambios y consistencia */
+:root {
+    --bg-dark: #0a0a0a; /* Fondo principal (casi negro puro) */
+    --text-main: #f5f5f7; /* Texto principal (blanco roto/hueso) */
+    --text-muted: #86868b; /* Texto secundario (gris apagado) para reducir contraste excesivo */
+    --accent-blue: #2997ff; /* Color de acento vibrante para botones, enlaces y detalles */
+}
+
+/* Reseteo general del navegador: quitamos márgenes y paddings por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* El padding no aumenta el tamaño total del elemento */
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* =========================================================================
+   ANIMACIONES CLAVE DE ENTRADA (Múltiples reusos)
+   ========================================================================= */
+/* Fader-Down: Aparecen las cosas desde atrás y arriba sutilmente como el Hero Principal Title   */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fader-Up: Deslizan las cosas flotando desde Abajo y entran al centro del Flow con opacidad real   */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+html {
+    scroll-behavior: smooth; /* Para que el scroll hacia los anclajes (como #tecnologias) sea suave y no de golpe */
+}
+
+/* Estilos del cuerpo base (Body) */
+body {
+    background-color: var(--bg-dark); /* Color de respaldo por si falla el degradado */
+    color: var(--text-main);
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+    min-height: 100vh; /* Asegura que la página ocupe al menos el 100% del alto de la ventana */
+    display: flex; /* Flexbox para estructurar cómodamente header y main */
+    flex-direction: column;
+    /* Elegante degradado de azul muy oscuro hacia azul oscuro profundo */
+    background: linear-gradient(315deg, #010e2b 30%, #000000 70%);
+    background-attachment: fixed; /* Mantiene el fondo estático mientras se hace scroll (efecto paralaje sutil) */
+}

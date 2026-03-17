@@ -1,0 +1,183 @@
+/* =========================================================================
+   HEADER Y NAVEGACIÓN
+   ========================================================================= */
+header {
+    width: 100%;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Borde sutil transparente */
+    /* Efecto Glassmorphism (Vidrio esmerilado) para el menú superior */
+    background-color: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(10px);
+    position: sticky; /* Se queda fijo al hacer scroll hacia abajo */
+    top: 0;
+    z-index: 100; /* Asegura que el menú siempre esté por encima del resto, aumentado para el dropdown */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent-blue); /* El punto azul del logo */
+}
+
+nav ul {
+    list-style: none; /* Quita las viñetas por defecto */
+    display: flex;
+    gap: 3rem; /* Espaciado automático entre los enlaces */
+}
+
+/* Base de los items de lista de navegación */
+nav li {
+    position: relative; /* Necesario para posicionar el menú desplegable en relación al item */
+}
+
+nav a {
+    text-decoration: none; /* Quita el subrayado por defecto */
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease; /* Transición suave al cambiar de color */
+    position: relative;
+    padding-bottom: 0.25rem;
+    display: block; /* Para que absorba el padding correctamente */
+}
+
+/* Creamos una línea decorativa inferior invisible (ancho 0) por defecto */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-blue);
+    transition: width 0.3s ease; /* Transición suave para redimensionar la línea */
+}
+
+/* Al pasar el mouse o estar activo, la línea decorativa se estira al 100% de ancho */
+nav a:hover::after, nav a.active::after {
+    width: 100%;
+}
+
+/* Estilos para el Menú Desplegable (Dropdown) */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Justo debajo del elemento padre */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Centrado horizontalmente, ligeramente empujado hacia abajo para efecto de aparición */
+    background-color: transparent; /* Sin fondo (transparente) */
+    min-width: 160px;
+    border: none; /* Sin borde */
+    padding: 0.5rem 0;
+    opacity: 0; /* Oculto por defecto */
+    visibility: hidden; /* Oculto visual y para eventos */
+    transition: all 0.3s ease;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: none; /* Sin sombra */
+    backdrop-filter: none; /* Sin desenfoque */
+}
+
+/* Elementos dentro del desplegable */
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1.5rem;
+    color: var(--text-muted); /* Color de texto del menú inactivo */
+    font-size: 0.95rem; /* Tamaño de fuente exacto del menú principal */
+    font-weight: 400; /* Grosor de fuente exacto del menú principal */
+    letter-spacing: 1px; /* Espaciado de letras exacto del menú principal */
+    text-transform: uppercase; /* Mayúsculas igual que el menú principal */
+    transition: color 0.3s ease;
+}
+
+.dropdown-menu a::after {
+    /* Reactivamos la línea inferior y ajustamos su posicionamiento */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0.5rem; /* Separamos la línea un poco más de las letras en el dropdown */
+    left: 1.5rem; /* Alineamos la línea con el inicio del texto según el padding */
+    background-color: var(--accent-blue);
+    transition: width 0.3s ease;
+    display: block; /* Hacemos que sea un bloque para usar width */
+    max-width: calc(100% - 3rem); /* Prevenimos que la línea sea más ancha que las letras (restando los paddings laterales) */
+}
+
+.dropdown-menu a:hover, .dropdown-menu a.active {
+    background-color: transparent; /* Quitamos el fondo azul que tenía antes */
+    color: var(--text-main); /* Exactamente el mismo hover (color blanco brillante) que el menú principal */
+}
+
+.dropdown-menu a:hover::after, .dropdown-menu a.active::after {
+    width: calc(100% - 3rem); /* Estiramos la línea bajo las letras */
+}
+
+/* Mostrar el menú al pasar el mouse sobre el elemento (li) con clase "dropdown" */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px); /* Se mueve un poco hacia arriba para efecto flotante */
+}
+
+/* Estados al pasar el mouse (hover) o al estar en la página actual (active) para los enlaces del menú principal */
+nav > ul > li > a:hover, nav > ul > li > a.active {
+    color: var(--text-main);
+}
+
+/* =========================================================================
+   CONTENIDO PRINCIPAL (MAIN)
+   ========================================================================= */
+main {
+    flex: 1; /* Ocupa el espacio vertical restante */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Alineación vertical central dinámica */
+    text-align: center;
+    padding: 1rem 2rem; /* Se reduce fuertemente de 4rem a 1rem para ahorrar espacio vertical */
+    min-height: calc(100vh - 100px); /* 100% Pantalla menos aprox el header, de este modo aseguro no scroll idealmente */
+}
+
+/* Título de introducción (Hero) de cada página */
+.hero-title {
+    font-size: 3.5rem; /* Achicamos la fuente base levemente de 4.5 a 3.5 */
+    font-weight: 300;
+    letter-spacing: -2px; /* Letras ligeramente más juntas para un look moderno */
+    margin-bottom: 0.5rem; /* Menos espacio hacia abajo */
+    color: var(--text-main);
+    animation: fadeInDown 1s ease-out forwards; /* Animación de entrada inicial desde arriba */
+}
+
+/* Palabras clave destacadas en color de acento azul */
+.hero-title span {
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+/* Descripciones principales debajo del Título Hero */
+.hero-description {
+    font-size: 1.1rem; /* Pequeña reducción de tamaño (1.25 a 1.1) */
+    color: var(--text-muted);
+    width: 90%;
+    max-width: 1200px; /* Un tope máximo sano para pantallas ultrawide */
+    margin-bottom: 1.5rem; /* Margen separado del botón reducido */
+    margin-left: auto; /* Centrar al no tener flex full */
+    margin-right: auto;
+    font-weight: 300;
+    line-height: 1.4; /* Mejora lectura sin expandir altura demasiado */
+    animation: fadeInUp 1s ease-out forwards 0.5s; /* Animación con retraso posterior al slider */
+    opacity: 0;
+}

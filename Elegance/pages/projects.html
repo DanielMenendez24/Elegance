@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    
+    <!-- Preconexión de fuentes (Acelera la carga) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Enlaces a los estilos CSS modulares -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+    <!-- Menú de navegación principal -->
+    <header>
+        <div class="logo">Elegance<span>.</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="projects.html" class="active">Proyectos</a></li> <!-- Página actual -->
+                <li class="dropdown">
+                    <a href="services.html">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html#tecnologias">Tecnologías</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Contenido principal -->
+    <main>
+        <section class="projects-section">
+            <h1 class="hero-title">Proyectos <span>.</span></h1>
+            
+            <!-- Cuadrícula (Grid) que contiene todas las tarjetas de proyectos -->
+            <div class="projects-grid">
+                
+                <!-- Tarjeta de Proyecto 1: E-Commerce -->
+                <div class="project-card">
+                    <!-- Contenedor para la imagen generada (Mockup) -->
+                    <div class="project-img-wrapper">
+                        <img src="../img/ecommerce.png" alt="Zenith E-Commerce">
+                    </div>
+                    <h3>Zenith E-Commerce</h3>
+                    <p>Plataforma de ventas online con pasarela de pago integrada y diseño enfocado en la conversión.</p>
+                    <!-- Etiquetas que indican las tecnologías o habilidades usadas en este proyecto -->
+                    <div class="tags"><span>UI/UX</span><span>React</span><span>Node.js</span></div>
+                </div>
+                
+                <!-- Tarjeta de Proyecto 2: Productora -->
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="../img/lumiere.png" alt="Lumiere Films">
+                    </div>
+                    <h3>Lumiere Films</h3>
+                    <p>Web inmersiva para una productora audiovisual, destacando su portfolio de videos con un rendimiento óptimo.</p>
+                    <div class="tags"><span>Animaciones</span><span>GSAP</span><span>Next.js</span></div>
+                </div>
+                
+                <!-- Tarjeta de Proyecto 3: Informativa Estática -->
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="../img/vanguardia.png" alt="Vanguardia Info">
+                    </div>
+                    <h3>Vanguardia Info</h3>
+                    <p>Página web estática de información corporativa con arquitectura limpia, alto SEO y diseño ultra rápido.</p>
+                    <div class="tags"><span>HTML/CSS</span><span>Minimalista</span><span>SEO</span></div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    
+    <!-- Preconexión de fuentes (Acelera la carga) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Enlaces a los estilos CSS modulares -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+    <!-- Menú de Navegación -->
+    <header>
+        <div class="logo">Elegance<span>.</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="projects.html">Proyectos</a></li>
+                <li class="dropdown">
+                    <a href="services.html" class="active">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#tecnologias">Tecnologías</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Encabezado principal de la página -->
+        <section class="services-intro">
+            <h1 class="hero-title">Servicios <span>.</span></h1>
+            <p class="hero-description">
+                Ofrecemos soluciones digitales integrales para llevar tu negocio al siguiente nivel, utilizando las mejores prácticas de la industria.
+            </p>
+        </section>
+        
+        <!-- Sección 1: Lista de Servicios (Grid con tarjetas) -->
+        <section class="services-list">
+            <h2 class="section-title">Qué Hacemos</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Diseño UI / UX</h3>
+                    <p>Creamos interfaces de usuario intuitivas y atractivas que no solo se ven increíbles, sino que ofrecen una experiencia fluida para maximizar la retención.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Desarrollo Frontend</h3>
+                    <p>Construimos el lado visual de tu web con código limpio, moderno y responsivo para asegurar que funcione perfectamente en cualquier dispositivo.</p>
+                </div>
+                <div class="service-card">
+                    <h3>E-Commerce</h3>
+                    <p>Desarrollamos tiendas online de alto rendimiento optimizadas para la conversión y adaptadas a las necesidades específicas de tus ventas.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Optimización SEO</h3>
+                    <p>Aplicamos estrategias técnicas para que tu sitio web cargue rápido y se posicione en los primeros resultados de los motores de búsqueda.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Tecnologías que manejamos (Acordeón Interactivo) -->
+        <section class="technologies">
+            <h2 id="tecnologias" class="section-title">Tecnologías que Manejamos</h2>
+            <div class="tech-stack">
+                <!-- Cada tech-item es expandible al hacer clic (toggleTech) -->
+                <div class="tech-item" onclick="toggleTech(this)">
+                    <div class="tech-header">
+                        <span>HTML5</span>
+                        <i class="toggle-icon">+</i> <!-- Icono que cambia al estado activo (-) -->
+                    </div>
+                    <div class="tech-description">La base estructural de la web moderna. Lo usamos para crear sitios semánticos, accesibles y optimizados para el SEO.</div>
+                </div>
+                
+                <div class="tech-item" onclick="toggleTech(this)">
+                    <div class="tech-header">
+                        <span>CSS3 (Vanilla)</span>
+                        <i class="toggle-icon">+</i>
+                    </div>
+                    <div class="tech-description">Creamos diseños visualmente asombrosos y animaciones fluidas desde cero, sin depender de pesados frameworks que ralentizan tu página.</div>
+                </div>
+                
+                <div class="tech-item" onclick="toggleTech(this)">
+                    <div class="tech-header">
+                        <span>JavaScript (ES6+)</span>
+                        <i class="toggle-icon">+</i>
+                    </div>
+                    <div class="tech-description">Damos vida a tu web. Con JS, agregamos interactividad, validaciones en tiempo real y conexiones dinámicas sin recargar la página.</div>
+                </div>
+                
+                <div class="tech-item" onclick="toggleTech(this)">
+                    <div class="tech-header">
+                        <span>React.js</span>
+                        <i class="toggle-icon">+</i>
+                    </div>
+                    <div class="tech-description">La biblioteca de interfaces número uno. Ideal para construir aplicaciones web complejas, rápidas y altamente escalables.</div>
+                </div>
+                
+                <div class="tech-item" onclick="toggleTech(this)">
+                    <div class="tech-header">
+                        <span>Next.js</span>
+                        <i class="toggle-icon">+</i>
+                    </div>
+                    <div class="tech-description">Llevamos React al siguiente nivel. Permite renderizado en el servidor (SSR) para que tu web sea ultrarrápida y perfecta para Google (SEO).</div>
+                </div>
+                
+                <div class="tech-item" onclick="toggleTech(this)">
+                    <div class="tech-header">
+                        <span>Node.js</span>
+                        <i class="toggle-icon">+</i>
+                    </div>
+                    <div class="tech-description">El motor detrás de las aplicaciones backend veloces. Lo utilizamos para crear API robustas y manejar bases de datos eficientemente.</div>
+                </div>
+                
+                <div class="tech-item" onclick="toggleTech(this)">
+                    <div class="tech-header">
+                        <span>Figma</span>
+                        <i class="toggle-icon">+</i>
+                    </div>
+                    <div class="tech-description">Nuestra principal herramienta de diseño UI/UX. Con ella prototipamos y probamos la experiencia antes de escribir la primera línea de código.</div>
+                </div>
+            </div>
+            
+            <!-- Botón para ir a ver proyectos -->
+            <div class="btn-container" style="margin-top: 3rem;">
+                <a href="projects.html" class="btn btn-primary">Ver Proyectos</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Vinculamos el JavaScript Externo modular -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

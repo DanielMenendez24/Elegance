@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Cambiamos el idioma del documento a español -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal & Elegant Style</title>
+
+    <!-- Preconexión de fuentes (Acelera la carga) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Enlazamos nuestras hojas de estilo modulares -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+    <!-- Cabecera de la página con el logotipo y menú de navegación -->
+    <header>
+        <div class="logo">Elegance<span>.</span></div> <!-- El span permite darle un color distintivo al punto -->
+        <nav>
+            <ul>
+                <!-- Enlaces del menú. La clase "active" indica la página actual -->
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="projects.html">Proyectos</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html#tecnologias">Tecnologías</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal de la página de inicio -->
+    <main>
+        <!-- Sección envolvente semántica -->
+        <section class="hero-section">
+            <h1 class="hero-title">Agencia Web <span>Premium</span></h1>
+            
+            <!-- Sección del Slider de Proyectos (Carrusel animado) -->
+            <div class="home-slider-section">
+                <div class="slider-container">
+                    <!-- Pista móvil para deslizar las imágenes -->
+                    <div class="slider-track">
+                        <!-- Slide 1 -->
+                        <div class="slide active">
+                            <img src="../img/ecommerce.png" alt="Proyecto E-Commerce">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="slide">
+                            <img src="../img/lumiere.png" alt="Proyecto Lumiere Films">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="slide">
+                            <img src="../img/vanguardia.png" alt="Proyecto Vanguardia Info">
+                        </div>
+                    </div>
+                    
+                    <!-- Botones de navegación del slider -->
+                    <button class="slider-btn prev" aria-label="Slide anterior">&#10094;</button>
+                    <button class="slider-btn next" aria-label="Siguiente slide">&#10095;</button>
+                    
+                    <!-- Indicadores (Puntos) -->
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Descripción breve de la empresa -->
+            <p class="hero-description">
+                En Elegance, transformamos tu visión en experiencias digitales excepcionales. Somos una agencia
+                especializada en diseño web premium, fusionando estética minimalista, alto rendimiento y estrategias de
+                conversión. Ayudamos a marcas ambiciosas a destacar en el entorno digital mediante interfaces sofisticadas,
+                intuitivas y tecnología de vanguardia.
+            </p>
+            
+            <!-- Contenedor del Botón Call To Action (Llamada a la acción) -->
+            <div class="btn-container">
+                <a href="projects.html" class="btn btn-primary">Descubrir Más</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Vinculamos el JavaScript Externo modular -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
